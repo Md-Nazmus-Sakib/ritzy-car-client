@@ -1,15 +1,53 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../../assets/Images/Logo/logo.png'
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
+    const { user, logOut, loading } = useContext(AuthContext);
+
+
+    if (loading) {
+        return <div className='my-32 flex justify-center items-center w-full h-screen'>
+            <progress className="progress progress-secondary mx-auto w-56"></progress>
+        </div>
+    }
+
+    const handelLogOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Successfully Log Out',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+    }
     const pages = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/menu'}>Category</NavLink></li>
         <li><NavLink to={'/shop'}>Our Shop</NavLink></li>
+        {
+            user ? <div title={user?.displayName} className='flex justify-center items-center gap-4'>
+
+                <div className="block avatar font-2xl ml-4">
+                    <div className="w-12 rounded-full tooltip text-white tooltip-bottom" data-tip="hello">
+                        <img src={user?.photoURL} />
+
+                    </div>
+                </div>
+                <h1 className='hidden'>{user?.displayName}</h1>
+                <li><Link onClick={handelLogOut}>LogOut</Link></li>
+            </div> :
+                <li><NavLink to={'/logLayout/login'}>Login</NavLink></li>
+        }
     </>
 
     return (
-        <div className="navbar text-xl font-bold fixed z-10 bg-opacity-70 bg-black text-white max-w-screen-xl px-6">
+        <div className="navbar text-xl font-bold fixed z-10 bg-opacity-70 bg-black text-white max-w-screen-xl px-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,9 +60,10 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <div className="btn-ghost normal-case text-xl p-2 rounded-md">
-                    <h1>Ritzy</h1>
-                    <h2>Car</h2>
+                <div className="btn-ghost normal-case text-xl p-2 rounded-md flex items-center">
+                    <img className='w-12 h-12 sm:w-20 sm:h-20' src={logo} alt="" />
+                    <h1>Ritzy Car</h1>
+
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex items-center">
@@ -34,11 +73,7 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
-            <div className="navbar-end">
-                <ul>
-                    <li><NavLink to={'/login'}>Login</NavLink></li>
-                </ul>
-            </div>
+
 
         </div>
     );
