@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Category = ({ brand }) => {
-    const { _id, brandName, brandImg, companyDetails } = brand;
+    const { brandName, brandImg, companyDetails } = brand;
     return (
         <div className='my-6'>
             <h1 className='text-5xl my-12 text-center font-extrabold uppercase'>-- {brandName} --</h1>

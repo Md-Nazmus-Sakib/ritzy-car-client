@@ -1,8 +1,17 @@
 import React from 'react';
 import Category from './Category';
-import img from '../../../assets/Images/Banner/banner3.jpeg'
 
-const Categories = ({ brands }) => {
+import { useState } from 'react';
+import { useEffect } from 'react';
+
+const Categories = () => {
+    const [brands, setBrands] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/brands')
+            .then(res => res.json())
+            .then(data => setBrands(data))
+    }, [])
+
     return (
         <div className='my-12 relative'>
 

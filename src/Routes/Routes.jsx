@@ -8,6 +8,7 @@ import LoginLayout from "../Layout/LoginLayout/LoginLayout";
 import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import Products from "../Pages/Products/Products";
+import ProductDetails from "../Pages/Products/ProductDetails";
 
 export const router = createBrowserRouter([
     {
@@ -17,12 +18,17 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/brands')
+
             },
             {
                 path: '/brands/:brandName',
                 element: <Products></Products>,
                 loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.brandName}`)
+            },
+            {
+                path: '/products/:id',
+                element: <ProductDetails></ProductDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
             },
             {
                 path: '/logLayout',
