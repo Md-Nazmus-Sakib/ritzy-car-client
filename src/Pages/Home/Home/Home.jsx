@@ -1,9 +1,14 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
+import { useLoaderData } from 'react-router-dom';
+import Categories from '../Categories/Categories';
 
 const Home = () => {
+    const brands = useLoaderData();
     return (
         <div>
-            <h2>home</h2>
+            <Banner></Banner>
+            <Categories brands={brands}></Categories>
         </div>
     );
 };
