@@ -83,8 +83,8 @@ const Login = () => {
                         <h3 className='text-lg text-center'>Don't Have an account please <Link to={'/logLayout/register'}><span className='font-extrabold text-red-600'>Register</span></Link></h3>
                     </div>
                     <div className='mb-8 text-center'>
-                        <button onClick={handelGoogleLogIn} className="btn btn-circle btn-outline bg-rose-500 text-white">
-                            <FaGoogle></FaGoogle>
+                        <button onClick={handelGoogleLogIn} className='border-4 border-red-500 rounded-full me-2' >
+                            <h1 className='me-4'><span className="btn btn-circle btn-outline bg-rose-500 text-white"> <FaGoogle></FaGoogle></span>  Google Sign in</h1>
                         </button>
                     </div>
                 </div>

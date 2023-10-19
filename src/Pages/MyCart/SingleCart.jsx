@@ -7,10 +7,10 @@ const SingleCart = ({ cart, handelDelete }) => {
 
 
     return (
-        <div className='flex gap-10 my-10 border justify-center rounded-xl'>
+        <div className='md:flex gap-10 my-10 border justify-center rounded-xl'>
             <div className="card bg-neutral text-neutral-content md:w-1/2">
                 <div className="card-body items-center text-center">
-                    <img src={productImg} alt="" />
+                    <img className='h-[300px] w-full rounded-xl' src={productImg} alt="" />
                 </div>
             </div>
             <div className="card bg-neutral text-neutral-content md:w-1/2">
@@ -22,6 +22,12 @@ const SingleCart = ({ cart, handelDelete }) => {
                     <div className="card-actions justify-end">
                         <button onClick={() => handelDelete(cart)} className="btn btn-primary">Delete from Cart</button>
 
+                    </div>
+
+                    <div>
+                        <h1>Product Added by</h1>
+                        <p>Name: {userName}</p>
+                        <p>email:{userEmail}</p>
                     </div>
                 </div>
             </div>

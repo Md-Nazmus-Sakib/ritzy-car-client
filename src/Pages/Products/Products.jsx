@@ -1,9 +1,35 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
 import Product from './Product';
+import ProductImage from './ProductImage';
 
 const Products = () => {
+    const [images, setImages] = useState([]);
     const products = useLoaderData();
+    const [loading, setLoading] = useState(true)
+
+    const { brandName } = useParams();
+    console.log(brandName)
+
+
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/images')
+            .then(res => res.json())
+            .then(data => {
+                setImages(data)
+                setLoading(false)
+            })
+    }, [])
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+    const brandImages = images.find(item => item.brandName === brandName)
+    console.log(brandImages)
+    const { img1 } = brandImages;
+    console.log(img1)
 
     if (products.length === 0) {
         return (
@@ -14,14 +40,17 @@ const Products = () => {
     }
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10 my-12'>
+        <div>
+            <ProductImage brandImages={brandImages} ></ProductImage>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 my-12'>
 
-            {
-                products?.map(product => <Product
-                    key={product._id}
-                    product={product}
-                ></Product>)
-            }
+                {
+                    !loading && products?.map(product => <Product
+                        key={product._id}
+                        product={product}
+                    ></Product>)
+                }
+            </div>
         </div>
     );
 };

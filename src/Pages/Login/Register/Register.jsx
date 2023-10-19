@@ -86,7 +86,7 @@ const Register = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                {error && <p className='text-amber-300 rounded-md font-bold bg-white p-2'>{error}</p>}
+                                {error && <p className='text-red-500 rounded-md font-bold bg-white p-2'>{error}</p>}
                             </label>
                         </div>
                         <div className="form-control mt-6">
