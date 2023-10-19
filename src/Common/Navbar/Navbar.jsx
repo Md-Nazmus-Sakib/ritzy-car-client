@@ -9,8 +9,8 @@ const Navbar = () => {
 
 
     if (loading) {
-        return <div className='my-32 flex justify-center items-center w-full h-screen'>
-            <progress className="progress progress-secondary mx-auto w-56"></progress>
+        return <div className='my-96 flex justify-center items-center w-full h-screen'>
+            <span className="loading loading-spinner loading-lg text-secondary"></span>
         </div>
     }
 
@@ -28,8 +28,9 @@ const Navbar = () => {
     }
     const pages = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/menu'}>Category</NavLink></li>
+
         <li><NavLink to={'/addProduct'}>Add Product</NavLink></li>
+        <li><NavLink to={'/myCart'}>My Cart</NavLink></li>
         {
             user ? <div title={user?.displayName} className='flex justify-center items-center gap-4'>
 
