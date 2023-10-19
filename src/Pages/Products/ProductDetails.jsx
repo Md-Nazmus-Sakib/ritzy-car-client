@@ -1,12 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
     const product = useLoaderData();
+    const { user } = useContext(AuthContext);
+
     const { _id, modelName, brandName, price, rating, img, description } = product;
 
-    const handelAddToCart = product => {
-        const cartItem = {}
+    const handelAddToCart = (product) => {
+        const cartItem = { userName: user?.displayName, userEmail: user?.email, productId: _id, productModel: modelName, brand: brandName, productImg: img, productPrice: price }
+        console.log(cartItem)
+        fetch('http://localhost:5000/carts', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(cartItem)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Product Added on the Cart',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+            .catch(error => console.log(error))
+
     }
     return (
         <div className='mx-4' >
