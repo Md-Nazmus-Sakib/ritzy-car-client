@@ -29,7 +29,7 @@ const Navbar = () => {
     const pages = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/menu'}>Category</NavLink></li>
-        <li><NavLink to={'/shop'}>Our Shop</NavLink></li>
+        <li><NavLink to={'/addProduct'}>Add Product</NavLink></li>
         {
             user ? <div title={user?.displayName} className='flex justify-center items-center gap-4'>
 

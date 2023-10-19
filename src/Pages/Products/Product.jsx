@@ -16,8 +16,8 @@ const Product = ({ product }) => {
                     <h2 className="card-title uppercase my-2">Price: $ {price}</h2>
 
                     <p>details: {description}</p>
-                    <div className="card-actions justify-center">
-
+                    <div className="card-actions flex justify-center">
+                        <Link to={`/updateProduct/${_id}`}>  <button className="btn btn-wide btn-secondary">Update Product</button></Link>
 
                         <Link to={`/products/${_id}`} className="btn btn-error">Details</Link>
                     </div>

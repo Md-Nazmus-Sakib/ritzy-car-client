@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-    const { signIn, setLoading } = useContext(AuthContext);
+    const { signIn, setLoading, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
@@ -39,6 +40,19 @@ const Login = () => {
                 setError(error.message)
             })
     }
+
+    const handelGoogleLogIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                setLoading(false)
+                setError(error.message)
+            })
+    }
     return (
         <div className='bg-yellow-500 w-full min-h-full py-10 text-white absolute rounded-xl flex justify-center' style={{ backfaceVisibility: 'hidden' }}>
             <div className='w-full p-6'>
@@ -57,7 +71,7 @@ const Login = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered text-white" required />
                             <label className="label">
-
+                                {error && <p className='text-red-600 rounded-md font-bold bg-white p-2'>{error}</p>}
                             </label>
                         </div>
                         <div className="form-control mt-6">
@@ -67,6 +81,11 @@ const Login = () => {
                     </form>
                     <div className='mt-6'>
                         <h3 className='text-lg text-center'>Don't Have an account please <Link to={'/logLayout/register'}><span className='font-extrabold text-red-600'>Register</span></Link></h3>
+                    </div>
+                    <div className='mb-8 text-center'>
+                        <button onClick={handelGoogleLogIn} className="btn btn-circle btn-outline bg-rose-500 text-white">
+                            <FaGoogle></FaGoogle>
+                        </button>
                     </div>
                 </div>
             </div>

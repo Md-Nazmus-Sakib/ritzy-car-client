@@ -25,7 +25,7 @@ const Register = () => {
         else if (! /^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)) {
             return setError('password must be one special Character')
         }
-        console.log(name, photo, email, password)
+
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
