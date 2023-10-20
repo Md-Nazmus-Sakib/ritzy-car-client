@@ -27,7 +27,7 @@ const UpdateProduct = () => {
             description: details
         }
 
-        fetch(`https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/products/${_id}`, {
+        fetch(`https://ritzy-car-server-exsea3g2u-md-nazmus-sakib.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

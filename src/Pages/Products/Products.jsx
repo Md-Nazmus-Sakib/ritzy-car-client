@@ -15,7 +15,7 @@ const Products = () => {
 
 
     useEffect(() => {
-        fetch('https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/images')
+        fetch('https://ritzy-car-server-exsea3g2u-md-nazmus-sakib.vercel.app/images')
             .then(res => res.json())
             .then(data => {
                 setImages(data)

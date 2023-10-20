@@ -12,7 +12,7 @@ const ProductDetails = () => {
     const handelAddToCart = (product) => {
         const cartItem = { userName: user?.displayName, userEmail: user?.email, productId: _id, productModel: modelName, brand: brandName, productImg: img, productPrice: price }
         console.log(cartItem)
-        fetch('https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/carts', {
+        fetch('https://ritzy-car-server-exsea3g2u-md-nazmus-sakib.vercel.app/carts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

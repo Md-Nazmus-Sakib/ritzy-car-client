@@ -40,18 +40,18 @@ export const router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://ritzy-car-server-exsea3g2u-md-nazmus-sakib.vercel.app/products/${params.id}`)
 
             },
             {
                 path: '/brands/:brandName',
                 element: <Products></Products>,
-                loader: ({ params }) => fetch(`https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/brands/${params.brandName}`)
+                loader: ({ params }) => fetch(`https://ritzy-car-server-exsea3g2u-md-nazmus-sakib.vercel.app/brands/${params.brandName}`)
             },
             {
                 path: '/products/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://ritzy-car-server-exsea3g2u-md-nazmus-sakib.vercel.app/products/${params.id}`)
             },
             {
                 path: '/logLayout',

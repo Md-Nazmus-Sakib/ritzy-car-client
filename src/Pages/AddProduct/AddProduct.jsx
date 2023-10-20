@@ -25,7 +25,7 @@ const AddProduct = () => {
         }
 
 
-        fetch('https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/products', {
+        fetch('https://ritzy-car-server-exsea3g2u-md-nazmus-sakib.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
