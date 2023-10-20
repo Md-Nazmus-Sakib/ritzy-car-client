@@ -54,22 +54,22 @@ const Login = () => {
             })
     }
     return (
-        <div className='bg-yellow-500 w-full min-h-full py-10 text-white absolute rounded-xl flex justify-center' style={{ backfaceVisibility: 'hidden' }}>
+        <div className='bg-yellow-500 w-full min-h-full py-10  absolute rounded-xl flex justify-center' style={{ backfaceVisibility: 'hidden' }}>
             <div className='w-full p-6'>
                 <h1 className="text-5xl text-center font-bold">Login now!</h1>
                 <div className="w-full  my-6'">
                     <form onSubmit={handelSignIn} className="">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-white">Email</span>
+                                <span className="label-text ">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered text-white" required />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered " required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-white">Password</span>
+                                <span className="label-text ">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered text-white" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered " required />
                             <label className="label">
                                 {error && <p className='text-red-600 rounded-md font-bold bg-white p-2'>{error}</p>}
                             </label>
@@ -84,7 +84,7 @@ const Login = () => {
                     </div>
                     <div className='mb-8 text-center'>
                         <button onClick={handelGoogleLogIn} className='border-4 border-red-500 rounded-full me-2' >
-                            <h1 className='me-4'><span className="btn btn-circle btn-outline bg-rose-500 text-white"> <FaGoogle></FaGoogle></span>  Google Sign in</h1>
+                            <h1 className='me-4 text-white'><span className="btn btn-circle btn-outline bg-rose-500 text-white"> <FaGoogle></FaGoogle></span>  Google Sign in</h1>
                         </button>
                     </div>
                 </div>

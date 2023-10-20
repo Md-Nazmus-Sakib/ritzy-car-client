@@ -45,6 +45,7 @@ const Navbar = () => {
             </div> :
                 <li><NavLink to={'/logLayout/login'}>Login</NavLink></li>
         }
+
     </>
 
     return (

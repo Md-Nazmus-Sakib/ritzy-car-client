@@ -47,6 +47,7 @@ const ProductDetails = () => {
                         <div className="card-body items-center text-center">
                             <h2 className="card-title text-purple-500 uppercase">Model</h2>
                             <h2 className="card-title">{modelName}</h2>
+                            <h2>Rating: {rating} *</h2>
 
 
                         </div>

@@ -10,7 +10,7 @@ const Product = ({ product }) => {
                 <div className="card-body">
                     <h2 className="card-title">
                         Model: {modelName}
-                        <div className="badge badge-secondary w-24 h-8"> {rating}</div>
+                        <div className="badge badge-secondary w-24 h-8"> {rating} *</div>
                     </h2>
                     <h2 className="card-title uppercase my-2">Brand: {brandName}</h2>
                     <h2 className="card-title uppercase my-2">Price: $ {price}</h2>

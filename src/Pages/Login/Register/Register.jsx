@@ -84,7 +84,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text text-white">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered text-black" required />
                             <label className="label">
                                 {error && <p className='text-red-500 rounded-md font-bold bg-white p-2'>{error}</p>}
                             </label>

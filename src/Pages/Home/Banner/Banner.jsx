@@ -30,7 +30,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div data-src={bannerImg2} >
-                    <div className='absolute w-1/2 top-4 right-0 text-red-800'>
+                    <div className='absolute w-1/2 top-6 right-4 text-red-800'>
                         <h1 className='text-3xl md:text-7xl font-extrabold uppercase' >Buy The Car You have always Dreamed</h1>
 
                     </div>

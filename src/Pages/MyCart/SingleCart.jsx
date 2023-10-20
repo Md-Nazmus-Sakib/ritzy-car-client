@@ -7,7 +7,7 @@ const SingleCart = ({ cart, handelDelete }) => {
 
 
     return (
-        <div className='md:flex gap-10 my-10 border justify-center rounded-xl'>
+        <div className='md:flex gap-10 my-10 border-8 border-red-400 justify-center rounded-3xl shadow-2xl'>
             <div className="card bg-neutral text-neutral-content md:w-1/2">
                 <div className="card-body items-center text-center">
                     <img className='h-[300px] w-full rounded-xl' src={productImg} alt="" />

@@ -27,9 +27,7 @@ const Products = () => {
         return <div>Loading...</div>;
     }
     const brandImages = images.find(item => item.brandName === brandName)
-    console.log(brandImages)
-    const { img1 } = brandImages;
-    console.log(img1)
+    // console.log(brandImages)
 
     if (products.length === 0) {
         return (
