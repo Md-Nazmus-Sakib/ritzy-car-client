@@ -12,7 +12,7 @@ const Home = () => {
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked)
     }
-    console.log(isChecked)
+    // console.log(isChecked)
     return (
         <div className={`${isChecked ? 'bg-black text-white' : 'bg-white'}`}>
             <div className='relative'>

@@ -25,7 +25,7 @@ const AddProduct = () => {
         }
 
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

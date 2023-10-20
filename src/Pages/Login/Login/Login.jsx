@@ -19,7 +19,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         setError('')
-        console.log(email, password)
+        // console.log(email, password)
 
         signIn(email, password)
             .then(result => {
@@ -45,7 +45,7 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
+                // console.log(loggedUser)
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -54,20 +54,20 @@ const Login = () => {
             })
     }
     return (
-        <div className='bg-yellow-500 w-full min-h-full py-10  absolute rounded-xl flex justify-center' style={{ backfaceVisibility: 'hidden' }}>
+        <div className='bg-yellow-500 w-full min-h-full py-10  absolute rounded-xl flex justify-center bg-opacity-40' style={{ backfaceVisibility: 'hidden' }}>
             <div className='w-full p-6'>
-                <h1 className="text-5xl text-center font-bold">Login now!</h1>
+                <h1 className="text-5xl text-center font-bold text-white">Login now!</h1>
                 <div className="w-full  my-6'">
                     <form onSubmit={handelSignIn} className="">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text ">Email</span>
+                                <span className="label-text text-white">Email</span>
                             </label>
                             <input type="email" name='email' placeholder="email" className="input input-bordered " required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text ">Password</span>
+                                <span className="label-text text-white ">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered " required />
                             <label className="label">
@@ -80,7 +80,7 @@ const Login = () => {
                         </div>
                     </form>
                     <div className='mt-6'>
-                        <h3 className='text-lg text-center'>Don't Have an account please <Link to={'/logLayout/register'}><span className='font-extrabold text-red-600'>Register</span></Link></h3>
+                        <h3 className='text-lg text-center text-white'>Don't Have an account please <Link to={'/logLayout/register'}><span style={{ textShadow: ' 4px 4px 8px black' }} className='font-extrabold text-rose-500 '>Register</span></Link></h3>
                     </div>
                     <div className='mb-8 text-center'>
                         <button onClick={handelGoogleLogIn} className='border-4 border-red-500 rounded-full me-2' >

@@ -7,7 +7,7 @@ const MyCart = () => {
 
     const [carts, setCarts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/carts')
+        fetch('https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/carts')
             .then(res => res.json())
             .then(data => setCarts(data))
     }, [])
@@ -22,7 +22,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${cart._id}`, {
+                fetch(`https://ritzy-car-server-e0pbn0umq-md-nazmus-sakib.vercel.app/carts/${cart._id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

@@ -57,9 +57,9 @@ const Register = () => {
 
     }
     return (
-        <div className='bg-red-500 w-full min-h-full py-10 text-white  absolute rounded-xl flex justify-center' style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+        <div className='bg-red-500 w-full min-h-full py-10  absolute rounded-xl flex justify-center bg-opacity-40' style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
             <div className='w-full p-6'>
-                <h1 className="text-5xl text-center font-bold">Register now!</h1>
+                <h1 className="text-5xl text-center font-bold text-white">Register now!</h1>
                 <div className="w-full  my-6'">
                     <form onSubmit={handelRegister} className="">
                         <div className="form-control">
@@ -94,7 +94,7 @@ const Register = () => {
                         </div>
                     </form>
                     <div className='mt-6'>
-                        <h3 className='text-lg text-center'>Already Have an account please <Link to={'/logLayout/login'}><span className='font-extrabold text-amber-300'>Login</span></Link></h3>
+                        <h3 className='text-lg text-center text-white'>Already Have an account please <Link to={'/logLayout/login'}><span className='font-extrabold text-amber-300'>Login</span></Link></h3>
                     </div>
                 </div>
             </div>
