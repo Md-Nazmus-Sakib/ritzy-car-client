@@ -60,14 +60,14 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text text-white ">Model name?</span>
                             </label>
-                            <input type="text" name='modelName' placeholder="Model Name" className="input input-bordered w-full" />
+                            <input type="text" name='modelName' placeholder="Model Name" className="input input-bordered w-full" required />
 
                         </div>
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-white ">price?</span>
                             </label>
-                            <input type="number" name='price' placeholder="Price" className="input input-bordered w-full" />
+                            <input type="number" name='price' placeholder="Price" className="input input-bordered w-full" required />
 
                         </div>
                     </div>
@@ -76,7 +76,7 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text text-white">Photo Url</span>
                             </label>
-                            <input type="text" name='photo' placeholder="Photo Url" className="input input-bordered w-full" />
+                            <input type="text" name='photo' placeholder="Photo Url" className="input input-bordered w-full" required />
 
                         </div>
 
@@ -84,7 +84,7 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text text-white">Rating</span>
                             </label>
-                            <input type="range" name='rating' min={0} max="5" className="range bg-white range-secondary range-lg" step="" />
+                            <input type="range" name='rating' min={0} max="5" className="range bg-white range-secondary range-lg" step="" required />
                             <div className="w-full flex justify-between text-xs px-2 bg-orange-400 rounded-full">
                                 <span>1</span>
                                 <span>2</span>
@@ -115,7 +115,7 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text text-white ">Category</span>
                             </label>
-                            <input type="text" name='category' placeholder="category" className="input input-bordered w-full" />
+                            <input type="text" name='category' placeholder="category" className="input input-bordered w-full" required />
 
                         </div>
                     </div>
@@ -124,7 +124,7 @@ const AddProduct = () => {
                             <span className="label-text text-white ">Details</span>
 
                         </label>
-                        <textarea name='details' className="textarea textarea-bordered h-24" placeholder="Details"></textarea>
+                        <textarea name='details' className="textarea textarea-bordered h-24" placeholder="Details" required></textarea>
 
                     </div>
                     <div className='flex justify-center my-12'>
