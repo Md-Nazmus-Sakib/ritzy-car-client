@@ -12,7 +12,7 @@ const Category = ({ brand }) => {
                 <div className='md:w-1/2 text-center bg-black p-12 rounded-xl bg-opacity-40'>
                     <h1 className='text-5xl font-bold my-6'>{brandName}</h1>
                     <p>{companyDetails}</p>
-                    <Link to={`/brands/${brandName}`}> <button className="btn btn-error bg-opacity-80 my-6 text-white">Go Shop</button></Link>
+                    <Link to={`/brands/${brandName}`}> <button className="btn btn-error btn-wide bg-opacity-80 my-6 text-white">Go Shop</button></Link>
                 </div>
             </div>
 

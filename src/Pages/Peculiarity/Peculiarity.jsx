@@ -3,11 +3,12 @@ import icon1 from '../../assets/icon/sales-icon-0.png'
 import icon2 from '../../assets/icon/1260918.png'
 import icon3 from '../../assets/icon/7482272.png'
 import icon4 from '../../assets/icon/2587150.png'
+import bgImg from '../../assets/Images/Banner/banner-1.jpg'
 
 const Peculiarity = () => {
     return (
-        <div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-justify mx-4 my-12'>
+        <div className='min-h-screen my-12 p-6 text-white' style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),url(${bgImg})`, backgroundSize: "cover" }} >
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-justify mx-4 my-12 pt-20'>
                 <div>
                     <img className='w-1/2 mx-auto' src={icon1} alt="" />
                     <div>

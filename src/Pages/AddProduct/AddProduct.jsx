@@ -22,7 +22,7 @@ const AddProduct = () => {
             img: photo,
             description: details
         }
-        console.log(product)
+
 
         fetch('http://localhost:5000/products', {
             method: 'POST',
@@ -91,7 +91,7 @@ const AddProduct = () => {
                             <span className="label-text text-white">Brand Name</span>
 
                         </label>
-                        <select name='brandName' className="Brand Name h-12 rounded-lg text-white">
+                        <select name='brandName' className="Brand Name h-12 rounded-lg text-white px-4">
 
                             <option>Toyota</option>
                             <option>Ford</option>

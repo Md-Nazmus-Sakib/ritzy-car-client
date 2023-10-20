@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 const UpdateProduct = () => {
     const product = useLoaderData();
     const { _id, modelName, brandName, category, price, rating, img, description } = product;
+
     const handelUpdateProduct = event => {
         event.preventDefault();
         const form = event.target;
@@ -25,7 +26,7 @@ const UpdateProduct = () => {
             img: photo,
             description: details
         }
-        console.log(updateProduct)
+
         fetch(`http://localhost:5000/products/${_id}`, {
             method: 'PUT',
             headers: {
@@ -87,19 +88,21 @@ const UpdateProduct = () => {
                     </div>
                 </div>
                 <div className='md:flex gap-10 my-6'>
-                    <div className="form-control w-full ">
+                    <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text text-white">Brand Name</span>
 
                         </label>
-                        <select name='brandName' defaultValue={brandName} className="Brand Name h-12 rounded-lg text-white">
 
-                            <option>Toyota</option>
-                            <option>Ford</option>
-                            <option>Honda</option>
-                            <option>BMW</option>
-                            <option>Chevrolet</option>
-                            <option>Mercedes-Benz</option>
+
+                        <select name='brandName' defaultValue={brandName} className="Brand Name h-12 rounded-lg text-white px-4">
+                            <option value="toyota">Toyota</option>
+                            <option value="ford">Ford</option>
+                            <option value="honda">Honda</option>
+                            <option value="bmw">BMW</option>
+                            <option value="chevrolet">Chevrolet</option>
+                            <option value="mercedes-benz">Mercedes-Benz</option>
+
                         </select>
 
                     </div>
